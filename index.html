@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scary Website</title>
+
+    <!-- Import Creepster font for a scary effect -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Creepster', cursive;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .dark-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+            z-index: -1;
+        }
+
+        .scary-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scary-img {
+            width: 200px;
+            height: 300px;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        /* Text Styling */
+        .scary-text {
+            position: absolute;
+            top: 68%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff0000;
+            font-size: 50px;
+            text-align: center;
+            text-shadow: 4px 4px 10px black;
+            animation: flicker 2s infinite;
+            z-index: 1000; /* Ensure text is on top of everything */
+        }
+
+        /* Flickering text animation */
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+                text-shadow: 4px 4px 10px black;
+            }
+            50% {
+                opacity: 0.8;
+                text-shadow: 4px 4px 20px red;
+            }
+            100% {
+                opacity: 1;
+                text-shadow: 4px 4px 10px black;
+            }
+        }
+
+        /* 1. Pop-up effect */
+        .scary-img:nth-child(1) {
+            animation: popup 2s infinite;
+        }
+
+        @keyframes popup {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* 2. Fast movement around the website */
+        .scary-img:nth-child(2) {
+            position: absolute;
+            animation: moveAround 6s infinite linear;
+        }
+
+        @keyframes moveAround {
+            0% { top: 10%; left: 10%; }
+            25% { top: 10%; left: 80%; }
+            50% { top: 80%; left: 80%; }
+            75% { top: 80%; left: 10%; }
+            100% { top: 10%; left: 10%; }
+        }
+
+        /* 3. Growing and shrinking */
+        .scary-img:nth-child(3) {
+            animation: growShrink 3s infinite;
+        }
+
+        @keyframes growShrink {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* 4. Rotation */
+        .scary-img:nth-child(4) {
+            animation: rotateImage 5s infinite linear;
+        }
+
+        @keyframes rotateImage {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 5. Falling and bouncing effect */
+        .scary-img:nth-child(5) {
+            position: absolute;
+            animation: fallAndBounce 4s infinite;
+        }
+
+        @keyframes fallAndBounce {
+            0% {
+                top: -200px;
+                opacity: 0;
+            }
+            50% {
+                top: 60%;
+                opacity: 1;
+            }
+            70% {
+                top: 100%;
+                opacity: 1;
+            }
+            100% {
+                top: -200px;
+                opacity: 0;
+            }
+        }
+        /* Social media icons */
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ff0000; /* Change to desired hover color */
+        }
+    </style>
+</head>
+<body>
+
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop class="video-background">
+        <source src="images/hoor.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark overlay to make the background scarier -->
+    <div class="dark-overlay"></div>
+
+    <!-- Scary Text Section -->
+    <div class="scary-text">
+        Welcome to the endless palace
+    </div>
+
+    <!-- Scary images with animations -->
+    <div class="scary-container">
+        <img class="scary-img" src="images/scary_copy-removebg-preview.png" alt="Scary Image 1">
+        <img class="scary-img" src="images/scary_copy_2-removebg-preview.png" alt="Scary Image 2">
+        <img class="scary-img" src="images/scary_copy_3-removebg-preview.png" alt="Scary Image 3">
+        <img class="scary-img" src="images/scary_copy_4-removebg-preview.png" alt="Scary Image 4">
+        <img class="scary-img" src="images/scary-removebg-preview.png" alt="Scary Image 5">
+    </div>
+
+    <div class="social-icons">
+        <a href="https://twitter.com/yourprofile" target="_blank" title="Follow us on Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.tiktok.com/@yourprofile" target="_blank" title="Follow us on TikTok">
+            <i class="fab fa-telegram"></i>
+        </a>
+    </div>
+
+</body>
+</html>
